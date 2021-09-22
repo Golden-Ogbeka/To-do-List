@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Golden-Ogbeka/To-do-List#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^4.1.2",
     "nodemon": "^2.0.12"

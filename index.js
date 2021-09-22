@@ -1,8 +1,10 @@
+const express = require('express');
+const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
-const express = require('express');
 const server = express();
 
+server.use(cors()); //To enable cross origin resource sharing
 server.use(express.json()); //To be able to accept input from front-end
 
 // Database URL with name of Database
@@ -49,10 +51,10 @@ server.post('/api/task', async (req, res) => {
 					title: title,
 					content: content,
 				},
-				(err) => {
+				(err, result) => {
 					if (err) throw err;
 					dbConnect.close();
-					return res.send('Task Added');
+					return res.send(result.insertedId);
 				},
 			);
 		});
@@ -64,7 +66,7 @@ server.post('/api/task', async (req, res) => {
 // Delete Task
 server.delete('/api/task', async (req, res) => {
 	try {
-		let { taskID } = req.body;
+		let { taskID } = req.query;
 
 		// Convert ID to ObjectID for MongoDb to recognize it
 		taskID = ObjectId(taskID);

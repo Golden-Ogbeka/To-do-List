@@ -9,7 +9,8 @@ server.use(cors()); //To enable cross origin resource sharing
 server.use(express.json()); //To be able to accept input from front-end
 
 // Database URL with name of Database
-let DB_URL = 'mongodb://localhost:27017/Todo';
+let DB_URL =
+	'mongodb+srv://admin:1234@testdb.mjwx9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 // Initial Database connection
 try {

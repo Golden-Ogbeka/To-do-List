@@ -12,11 +12,15 @@ server.use(express.json()); //To be able to accept input from front-end
 let DB_URL = 'mongodb://localhost:27017/Todo';
 
 // Initial Database connection
-MongoClient.connect(DB_URL, (err, db) => {
-	if (err) throw err;
-	console.log('Database connected!');
-	db.close();
-});
+try {
+	MongoClient.connect(DB_URL, (err, db) => {
+		if (err) throw err;
+		console.log('Database connected!');
+		db.close();
+	});
+} catch (error) {
+	console.log("Couldn't connect to DB");
+}
 
 // View client
 server.use(express.static(path.join(__dirname, 'client/build')));

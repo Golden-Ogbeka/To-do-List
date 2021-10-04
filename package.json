@@ -1,5 +1,6 @@
 {
   "name": "to-do-list",
+  "homepage": "https://golden-ogbeka.github.io/To-do-List/",
   "version": "1.0.0",
   "description": "To-do list with add and delete functionalities",
   "main": "index.js",
@@ -16,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/Golden-Ogbeka/To-do-List/issues"
   },
-  "homepage": "https://github.com/Golden-Ogbeka/To-do-List#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",

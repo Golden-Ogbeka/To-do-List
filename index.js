@@ -95,5 +95,5 @@ server.delete('/api/task', async (req, res) => {
 
 // Server initialization on port 5000
 server.listen(5000, () => {
-	console.log('Server Started');
+	console.log('Server Started on port 5000');
 });

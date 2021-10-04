@@ -9,8 +9,7 @@ server.use(cors()); //To enable cross origin resource sharing
 server.use(express.json()); //To be able to accept input from front-end
 
 // Database URL with name of Database
-let DB_URL =
-	'mongodb+srv://admin:1234@testdb.mjwx9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+let DB_URL = process.env.MONGO_URI;
 
 // Initial Database connection
 try {

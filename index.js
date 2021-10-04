@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
@@ -15,6 +16,13 @@ MongoClient.connect(DB_URL, (err, db) => {
 	if (err) throw err;
 	console.log('Database connected!');
 	db.close();
+});
+
+// View client
+server.use(express.static(path.join(__dirname, 'client/build')));
+
+server.get('/', function (req, res) {
+	res.sendFile(path.join(__dirname, 'client', '/build/index.html'));
 });
 
 // Routes

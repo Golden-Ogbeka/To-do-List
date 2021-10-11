@@ -20,6 +20,7 @@ try {
 		db.close();
 	});
 } catch (error) {
+	console.error(error);
 	console.log("Couldn't connect to DB");
 }
 
@@ -41,6 +42,7 @@ server.get('/api/tasks', async (req, res) => {
 				});
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).send("Couldn't retrieve tasks");
 	}
 });
@@ -65,6 +67,7 @@ server.post('/api/task', async (req, res) => {
 			);
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).send("Couldn't add task");
 	}
 });
@@ -87,12 +90,15 @@ server.delete('/api/task', async (req, res) => {
 			});
 		});
 	} catch (error) {
+		console.error(error);
 		return res.status(500).send("Couldn't delete task");
 	}
 });
 
 // View client
-server.use(async function (req, res) {
+server.use(express.static(path.join(__dirname, 'client', 'build')));
+
+server.get('/*', async function (req, res) {
 	res.sendFile(path.join(__dirname, 'client', '/build/index.html'));
 });
 // Server initialization on port 5000

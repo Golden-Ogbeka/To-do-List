@@ -178,8 +178,8 @@ function App() {
 					</h4>
 				</Toolbar>
 			</AppBar>
-			<Box container style={{ minHeight: '100vh', padding: 20 }}>
-				<Box item lg={6} md={6} sm={12} xs={12}>
+			<Box style={{ minHeight: '100vh', padding: 20 }}>
+				<Box>
 					<h2
 						style={{
 							fontFamily: 'Calibri',

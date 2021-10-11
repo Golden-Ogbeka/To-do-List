@@ -257,7 +257,7 @@ function App() {
 
 					{loading ? (
 						<CircularProgress />
-					) : tasks.length > 0 ? (
+					) : tasks && tasks.length > 0 ? (
 						tasks.map((task) => (
 							<Card
 								style={{

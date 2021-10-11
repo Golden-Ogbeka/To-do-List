@@ -8,4 +8,4 @@ ReactJS, NodeJS and MongoDB
 
 ## Demo URL
 
-https://dry-waters-06160.herokuapp.com/
+https://to-do-app-by-golden-ogbeka.herokuapp.com/

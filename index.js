@@ -23,9 +23,6 @@ try {
 	console.log("Couldn't connect to DB");
 }
 
-// View client
-server.use(express.static(path.join(__dirname, 'client/build')));
-
 server.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, 'client', '/build/index.html'));
 });
@@ -97,6 +94,9 @@ server.delete('/api/task', async (req, res) => {
 		return res.status(500).send("Couldn't delete task");
 	}
 });
+
+// View client
+server.use(express.static(path.join(__dirname, 'client/build')));
 
 // Server initialization on port 5000
 server.listen(process.env.PORT || 5000, () => {

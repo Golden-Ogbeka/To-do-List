@@ -23,10 +23,6 @@ try {
 	console.log("Couldn't connect to DB");
 }
 
-server.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, 'client', '/build/index.html'));
-});
-
 // Routes
 
 // Get Tasks
@@ -96,8 +92,9 @@ server.delete('/api/task', async (req, res) => {
 });
 
 // View client
-server.use(express.static(path.join(__dirname, 'client/build')));
-
+server.use(async function (req, res) {
+	res.sendFile(path.join(__dirname, 'client', '/build/index.html'));
+});
 // Server initialization on port 5000
 server.listen(process.env.PORT || 5000, () => {
 	console.log(`Server Started on port ${process.env.PORT || 5000}`);

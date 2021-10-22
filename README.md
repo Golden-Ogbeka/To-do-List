@@ -6,6 +6,6 @@ To-do List with Add and Delete Task functionalities.
 
 ReactJS, NodeJS and MongoDB
 
-## Demo URL
+## Demo
 
 https://to-do-app-by-golden-ogbeka.herokuapp.com/

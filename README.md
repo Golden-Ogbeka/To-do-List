@@ -8,4 +8,4 @@ ReactJS, NodeJS and MongoDB
 
 ## Demo
 
-[https://to-do-app-by-golden-ogbeka.herokuapp.com/](https://to-do-app-by-golden-ogbeka.herokuapp.com/)
+[https://to-do-list-by-golden-ogbeka.cyclic.app/](https://to-do-list-by-golden-ogbeka.cyclic.app/)
